@@ -480,7 +480,7 @@ Selection sort - quadratic time.
 >
 > [E A E I Q U S S T Y **O** **(N)**] - O < N ? false
 >
-> [E A E I **<N>** U S S T Y O <**Q**>] - **SWAP**
+> [E A E I <**N**> U S S T Y O <**Q**>] - **SWAP**
 
 > [E A E I] | [N] | [U S S T Y O Q]
 
@@ -496,7 +496,7 @@ Selection sort - quadratic time.
 >
 > [E **A** **(E)**] A < E true
 >
-> [**<A>** **<E>>** **(E)**] **SWAP**
+> [<**A**> <**E**> **(E)**] **SWAP**
 
 >[A E E I N]
 
@@ -514,9 +514,9 @@ Selection sort - quadratic time.
 >
 > [U S S T Y **O** **(Q)**] O < Q true
 >
-> [**<O>** S S T Y **<U>** **(Q)**] **SWAP**
+> [<**O**> S S T Y <**U**> **(Q)**] **SWAP**
 >
-> [O **<Q>** S T Y U **<S>**] **SWAP**
+> [O <**Q**> S T Y U <**S**>] **SWAP**
 
 > [A E E I N O Q]
 
@@ -530,7 +530,7 @@ Selection sort - quadratic time.
 >
 >[S T Y **U** **(S)**] - U < S ? false
 >
->[S **<S>** Y U **<T>**] - **SWAP**
+>[S <**S**> Y U <**T**>] - **SWAP**
 
 >[ A E E I N O Q S S]
 
@@ -540,7 +540,7 @@ Selection sort - quadratic time.
 >
 >[Y **U** **(T)**] - U < T ? false
 >
->[**<T>** U **<Y>**] - **SWAP**
+>[<**T**> U <**Y**>] - **SWAP**
 
 >[A E E I N O Q S S T]
 
