@@ -597,30 +597,55 @@ P R I O * R * * I * T * Y * * * Q U E * * * U * E
 (where a letter means insert and an asterisk means remove the maximum) is inserted to an initially empty max heap. Give the sequence of values returned by del_max operations.
 
 > insert P in queue -> P 
+>
 > insert R -> R P
+>
 > insert I -> R P I
+>
 > insert O  -> R P O I
+>
 > ^ remove max -> P O I (**-R**)
+>
 > insert R -> R P O I 
+>
 > ^ remove max P O I (**-R**)
+>
 > ^ remove max O I (**-P**)
+>
 > insert I -> O I I
+>
 > ^ remove max I I (**-O**)
+>
 > insert T -> T I I
+>
 > ^ remove max I I (**-T**)
+>
 > insert Y -> Y I I
+>
 > ^ remove max II (**-Y**)
+>
 > ^ remove max I (**-I**)
+>
 > ^ remove max [] (**-I**)
+>
 > insert Q -> Q
+>
 > insert U -> Q U
+>
 > insert E -> Q U E
+>
 > ^ remove max U E (**-Q**)
+>
 > ^ remove max E (**-U**)
+>
 > ^ remove max [] (**-E**)
+>
 > insert U -> U
+>
 > ^ remove max [] (**-U**)
+>
 > insert E -> E
+>
 
 ## LAST
 The leftmost column is the original imput of string to be sorted; the rightmost column gives the string in sorted orderl the other columns are the contents at the intermediate step during one of the 8 sorting algorrithms listed below. Match up each algorithm by writing its number under correspodnig colunb. Use each number exactly once.
@@ -641,6 +666,7 @@ The leftmost column is the original imput of string to be sorted; the rightmost 
 >
 
 > 4: Shellsort: **C**
+>
 > Shell's original sequence: N/2 , N/4 , …, 1
 >
 
@@ -650,6 +676,7 @@ The leftmost column is the original imput of string to be sorted; the rightmost 
 >
 
 > 6: Mergesort(bottom-up): **D**
+>
 > In Mergesort (bottom-up) the idea that a one item array is already sorted, so if we have a specific array we can treat each element in it as a sorted array, then apply the merge as usual. 
 
 > 7: Quicksort: **I**
@@ -673,5 +700,6 @@ If you have any questions please contact me:
 dmitrushok@gmail.com
 
 **Dmitry Ulasau**
+
 
 
