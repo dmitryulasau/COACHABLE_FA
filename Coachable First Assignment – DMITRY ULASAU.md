@@ -379,6 +379,7 @@ Selection sort - quadratic time.
 
 2. Give traces, in the style of the trace given in this section, showing how the keys E A S Y Q U E S T I O N  are sorted with top-down mergesort and with bottom-up mergesort.
 > The top-down approach: Given an array of size N, the algorithm recursively breaks the array in half and then merges the results together.
+>
 >E A S Y Q U E S T I O N
 >
 >[E A S Y Q U] **|** [E S T I O N]
@@ -482,7 +483,7 @@ Selection sort - quadratic time.
 >
 > [E A E I <**N**> U S S T Y O <**Q**>] - **SWAP**
 
-> [E A E I] | [N] | [U S S T Y O Q]
+> **[E A E I] | [N] | [U S S T Y O Q]**
 
 > [E A E **(I)**]
 >
@@ -498,7 +499,7 @@ Selection sort - quadratic time.
 >
 > [<**A**> <**E**> **(E)**] **SWAP**
 
->[A E E I N]
+>**[A E E I N]**
 
 > [U S S T Y O **(Q)**]
 >
@@ -518,7 +519,7 @@ Selection sort - quadratic time.
 >
 > [O <**Q**> S T Y U <**S**>] **SWAP**
 
-> [A E E I N O Q]
+> **[A E E I N O Q]**
 
 >[S T Y U **(S)**]
 >
@@ -532,7 +533,7 @@ Selection sort - quadratic time.
 >
 >[S <**S**> Y U <**T**>] - **SWAP**
 
->[ A E E I N O Q S S]
+>**[ A E E I N O Q S S]**
 
 >[Y U **(T)**]
 >
@@ -542,7 +543,7 @@ Selection sort - quadratic time.
 >
 >[<**T**> U <**Y**>] - **SWAP**
 
->[A E E I N O Q S S T]
+>**[A E E I N O Q S S T]**
 
 >[U **(Y)**]
 >
@@ -551,10 +552,120 @@ Selection sort - quadratic time.
 > **[A E E I N O Q S S T U Y]**
 
 3. About how many compares will Quick.sort() make when sorting an array of N items that are all equal?
+> When the input data is already sorted, Quicksort performs at its worst.
+>
+> Given that every element in the array is the SAME right now, the array is sorted. So, the worst-case scenario for speedy sort is this.
+>
+> One of the partitions has 1 element (0 comparisons), while the other is recursively sorting a N-1 sub-array.
+>
+> (𝑁 − 1) + (𝑁 − 2) + ⋯+ 1=  N(N-1)/2 comparisons
+>
+>**𝑂(𝑁^2)**
 
 4. Show, in the style of the trace given with the code, how the entropy-optimal sort first partitions the array B A B A B A B A C A D A B R A
+> Applications commonly use arrays with a lot of duplicate sort keys. It may be possible to go from linearithmic to linear sorting in some cases.
+>
+>Partitioning the array into three sections, one for each item with a key that is smaller than, equal to, and larger than the partitioning item's key, is a simple solution.
+
+Found answer on the web:
+[Solution](https://algs4.cs.princeton.edu/23quicksort/images/partition-3.1.12.png)
+![Solution](https://algs4.cs.princeton.edu/23quicksort/images/partition-3.1.12.png "Solution")
 
 5. **Bad partitioning.** How does not stop on equal keys make quicksort go quadratic when all keys are equal? Give an example of this input.
+> HHHHHHHH, if we don't stop on equal keys we will get one subarray of 0 and one size of 8.
+
+&nbsp;
+## Heapsort
+
+1. Criticize the following idea: to implement find the maximum in constant time, why not keep track of the maximum value inserted so far, then return that value for find the maximum?
+> Heap: Ordered binary tree
+>
+> Because stack and queue don't store their elements in sorted order, it is impossible to determine the maximum indefinitely.
+>
+> Will need starting again when updating the maximum value following a remove-the-maximum procedure.
+
+2. Is an array that is sorted in decreasing order a max-oriented heap?
+> Heap is a tree data structure which is useful for priority queue.
+>
+> A max heap is a complete binary tree in which the value of a node is greater than or equal to the values of its children.
+>
+> Yes, it is sorted in decreasing order of a max oriented heap.
+
+
+2. Suppose that the sequence
+P R I O * R * * I * T * Y * * * Q U E * * * U * E
+(where a letter means insert and an asterisk means remove the maximum) is inserted to an initially empty max heap. Give the sequence of values returned by del_max operations.
+
+> insert P in queue -> P 
+> insert R -> R P
+> insert I -> R P I
+> insert O  -> R P O I
+> ^ remove max -> P O I (**-R**)
+> insert R -> R P O I 
+> ^ remove max P O I (**-R**)
+> ^ remove max O I (**-P**)
+> insert I -> O I I
+> ^ remove max I I (**-O**)
+> insert T -> T I I
+> ^ remove max I I (**-T**)
+> insert Y -> Y I I
+> ^ remove max II (**-Y**)
+> ^ remove max I (**-I**)
+> ^ remove max [] (**-I**)
+> insert Q -> Q
+> insert U -> Q U
+> insert E -> Q U E
+> ^ remove max U E (**-Q**)
+> ^ remove max E (**-U**)
+> ^ remove max [] (**-E**)
+> insert U -> U
+> ^ remove max [] (**-U**)
+> insert E -> E
+
+## LAST
+The leftmost column is the original imput of string to be sorted; the rightmost column gives the string in sorted orderl the other columns are the contents at the intermediate step during one of the 8 sorting algorrithms listed below. Match up each algorithm by writing its number under correspodnig colunb. Use each number exactly once.
+> 0: Original input: **A**
+>
+
+> 1: Sorted: **J**
+>
+
+> 2: Selection sort: **H**
+>
+> All starting letters in the sorted order. [1...11 ("**HISI"**)] - sorted (all minimums), [12...32] - unsorted.
+>
+
+> 3: Insertion sort: **F**
+>
+>Elements in part before "UARE" are sorted, elements below are NOT sorted (as in input).
+>
+
+> 4: Shellsort: **C**
+> Shell's original sequence: N/2 , N/4 , …, 1
+>
+
+> 5: Mergesort(top-down): **B**
+>
+> Split array in half and we can see that top half sortet as in Merge sort.
+>
+
+> 6: Mergesort(bottom-up): **D**
+> In Mergesort (bottom-up) the idea that a one item array is already sorted, so if we have a specific array we can treat each element in it as a sorted array, then apply the merge as usual. 
+
+> 7: Quicksort: **I**
+>
+>Array partitioned in two parts - PIVOT ("HELP"). All strings less than pivot are above and greater one are below it.
+>
+
+> 8: Quicksort (3-way): **E** ???
+>
+
+> 9: Heapsort: **G**
+> It's heapsort because the elements of the list are in the order which the sub parts follows the principle of max heap.
+>
+> WATC - Parent node.
+
+![Solution](https://res.cloudinary.com/dulasau/image/upload/v1675105551/ALGOS_ephrlj.bmp "Solution")
 
 ## License
 
