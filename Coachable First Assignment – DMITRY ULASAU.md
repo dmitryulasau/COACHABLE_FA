@@ -398,17 +398,17 @@ Selection sort - quadratic time.
 >[A E E I N O Q S S T U Y]
 
 > Bottom-Up: The iterative part is based on the idea that a one item array is already sorted, so if we have a specific array we can treat each element in it as a sorted array, then apply the merge as usual. Treat each item as a logical array.
-
+>
 >E A S Y Q U E S T I O N
 >
 >[E] **|** [A] **|** [S] **|** [Y] **|** [Q] **|** [U] **|** [E] **|** [S] **|** [T] **|** [I] **|** [O] **|** [N]
-
+>
 >[A E] **|** [S Y] **|** [Q U] **|** [E S] **|** [I T] **|** [N O]
-
+>
 >[A E S Y] **|** [E Q S U] **|** [I N O T]
-
+>
 >[A E E Q S S U Y] **|** [I N O T]
-
+>
 >[A E E I N O Q S S T U Y]
 
 &nbsp;
@@ -421,7 +421,7 @@ Selection sort - quadratic time.
 >
 > [**E** A S Y Q U E S T I O **(N)**] - E < N ? true
 >
-> [E **A** S Y Q U E S T I O **(N)**] - A < N ? ture
+> [E **A** S Y Q U E S T I O **(N)**] - A < N ? true
 >
 > [E A **S** Y Q U E S T I O **(N)**] - S < N ? false
 >
@@ -431,15 +431,15 @@ Selection sort - quadratic time.
 >
 > [E A S Y Q **U** E S T I O **(N)**] - U < N ? false
 >
-> [E A S Y Q U **E** S T I O **(N)**] - E < N ? ture
+> [E A S Y Q U **E** S T I O **(N)**] - E < N ? true
 >
-> [E A **<E>** Y Q U **<S>** S T I O **(N)**] <swap>
+> [E A **<E>** Y Q U **<S>** S T I O **(N)**] <SW>
 >
 > [E A E Y Q U S **S** T I O **(N)**] - S < N ? false
 >
 > [E A E Y Q U S S **T** I O **(N)**] - T < N ? false
 >
-> [E A E Y Q U S S T **I** O **(N)**] - I < N ? ture
+> [E A E Y Q U S S T **I** O **(N)**] - I < N ? true
 >
 > [E A E **<I>** Q U S S T **<Y>** O **(N)**]  <swap>
 >
@@ -456,7 +456,7 @@ Selection sort - quadratic time.
 >
 > [**E** A S Y Q U E S T I O **(N)**] - E < N ? true
 >
-> [E **A** S Y Q U E S T I O **(N)**] - A < N ? ture
+> [E **A** S Y Q U E S T I O **(N)**] - A < N ? true
 >
 > [E A **S** Y Q U E S T I O **(N)**] - S < N ? false
 >
@@ -466,7 +466,7 @@ Selection sort - quadratic time.
 >
 > [E A S Y Q **U** E S T I O **(N)**] - U < N ? false
 >
-> [E A S Y Q U **E** S T I O **(N)**] - E < N ? ture
+> [E A S Y Q U **E** S T I O **(N)**] - E < N ? true
 >
 > [E A **<E>** Y Q U **<S>** S T I O **(N)**] <swap>
 >
@@ -474,7 +474,7 @@ Selection sort - quadratic time.
 >
 > [E A E Y Q U S S **T** I O **(N)**] - T < N ? false
 >
-> [E A E Y Q U S S T **I** O **(N)**] - I < N ? ture
+> [E A E Y Q U S S T **I** O **(N)**] - I < N ? true
 >
 > [E A E **<I>** Q U S S T **<Y>** O **(N)**]  <swap>
 >
