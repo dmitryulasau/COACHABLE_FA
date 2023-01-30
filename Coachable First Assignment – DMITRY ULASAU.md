@@ -374,7 +374,174 @@ Selection sort - quadratic time.
 
 &nbsp;
 ## Mergesort
- # WORK IN PROGRESS...
+1. Describe in words why mergesort is a stable sort.
+> Two objects with equal keys appear in the same order in sorted output as they appear in the input array to be sorted.
+
+2. Give traces, in the style of the trace given in this section, showing how the keys E A S Y Q U E S T I O N  are sorted with top-down mergesort and with bottom-up mergesort.
+> The top-down approach: Given an array of size N, the algorithm recursively breaks the array in half and then merges the results together.
+E A S Y Q U E S T I O N
+[E A S Y Q U] **|** [E S T I O N]
+[E A S ] **|**  [Y Q U] **|**  [E S T] **|**  [I O N]
+[E A] **|** [S] **|**  [Y Q] **|** [U] **|** [E S] **|** [T] **|**  [I O] **|** [N]
+[E] **|**  [A] **|** [S] **|**  [Y] **|**  [Q] **|** [U] **|** [E] **|**  [S] **|** [T] **|** [I] **|** [O] **|** [N]
+[A E] **|** [S] **|** [Q Y] **|** [U] **|** [E S] **|** [T] **|** [I O] **|** [N]
+[A E S] **|** [Q U Y] **|** [E S T] **|** [I N O]
+[A E Q S U Y] **|** [E I N O S T]
+[A E E I N O Q S S T U Y]
+
+> Bottom-Up: The iterative part is based on the idea that a one item array is already sorted, so if we have a specific array we can treat each element in it as a sorted array, then apply the merge as usual. Treat each item as a logical array.
+E A S Y Q U E S T I O N
+[E] **|** [A] **|** [S] **|** [Y] **|** [Q] **|** [U] **|** [E] **|** [S] **|** [T] **|** [I] **|** [O] **|** [N]
+[A E] **|** [S Y] **|** [Q U] **|** [E S] **|** [I T] **|** [N O]
+[A E S Y] **|** [E Q S U] **|** [I N O T]
+[A E E Q S S U Y] **|** [I N O T]
+[A E E I N O Q S S T U Y]
+
+&nbsp;
+## Quicksort
+
+1. Show, in the style of the trace given with partition(), how that method partitions the array E A S Y Q U E S T I O N.
+> () - pivot
+>
+> [E A S Y Q U E S T I O **(N)**]
+>
+> [**E** A S Y Q U E S T I O **(N)**] - E < N ? true
+>
+> [E **A** S Y Q U E S T I O **(N)**] - A < N ? ture
+>
+> [E A **S** Y Q U E S T I O **(N)**] - S < N ? false
+>
+> [E A S **Y** Q U E S T I O **(N)**] - Y < N ? false
+>
+> [E A S Y **Q** U E S T I O **(N)**] - Q < N ? false
+>
+> [E A S Y Q **U** E S T I O **(N)**] - U < N ? false
+>
+> [E A S Y Q U **E** S T I O **(N)**] - E < N ? ture
+>
+> [E A **<E>** Y Q U **<S>** S T I O **(N)**] <swap>
+>
+> [E A E Y Q U S **S** T I O **(N)**] - S < N ? false
+>
+> [E A E Y Q U S S **T** I O **(N)**] - T < N ? false
+>
+> [E A E Y Q U S S T **I** O **(N)**] - I < N ? ture
+>
+> [E A E **<I>** Q U S S T **<Y>** O **(N)**]  <swap>
+>
+> [E A E I Q U S S T Y **O** **(N)**] - O < N ? false
+>
+> [E A E I **<N>** U S S T Y O **<Q>**] <swap>
+
+> [E A E I] | [N] | [U S S T Y O Q]
+
+2. Show, in the style of the quicksort trace, how quicksort sorts the array E A S Y Q U E S T I O N. (For the purposes of this exercise, ignore the initial shuffle.)
+> () - pivot
+>
+> [E A S Y Q U E S T I O **(N)**]
+>
+> [**E** A S Y Q U E S T I O **(N)**] - E < N ? true
+>
+> [E **A** S Y Q U E S T I O **(N)**] - A < N ? ture
+>
+> [E A **S** Y Q U E S T I O **(N)**] - S < N ? false
+>
+> [E A S **Y** Q U E S T I O **(N)**] - Y < N ? false
+>
+> [E A S Y **Q** U E S T I O **(N)**] - Q < N ? false
+>
+> [E A S Y Q **U** E S T I O **(N)**] - U < N ? false
+>
+> [E A S Y Q U **E** S T I O **(N)**] - E < N ? ture
+>
+> [E A **<E>** Y Q U **<S>** S T I O **(N)**] <swap>
+>
+> [E A E Y Q U S **S** T I O **(N)**] - S < N ? false
+>
+> [E A E Y Q U S S **T** I O **(N)**] - T < N ? false
+>
+> [E A E Y Q U S S T **I** O **(N)**] - I < N ? ture
+>
+> [E A E **<I>** Q U S S T **<Y>** O **(N)**]  <swap>
+>
+> [E A E I Q U S S T Y **O** **(N)**] - O < N ? false
+>
+> [E A E I **<N>** U S S T Y O **<Q>**] <swap>
+
+> [E A E I] | [N] | [U S S T Y O Q]
+
+> [E A E **(I)**]
+>
+> [**E** A E **(I)**] E < I true
+>
+> [E **A** E **(I)**] A < I true
+>
+> [E A **E** **(I)**] A < I true
+>
+> [**E** A **(E)**] E < E false
+>
+> [E **A** **(E)**] A < E true
+>
+> [**<A>** **<E>>** **(E)**] <swap>
+
+>[A E E I N]
+
+> [U S S T Y O **(Q)**]
+>
+> [**U** S S T Y O **(Q)**] U < Q false
+>
+> [U **S** S T Y O **(Q)**] S < Q false
+>
+> [U S **S** T Y O **(Q)**] S < Q false
+>
+> [U S S **T** Y O **(Q)**] T < Q false
+>
+> [U S S T **Y** O **(Q)**] Y < Q false
+>
+> [U S S T Y **O** **(Q)**] O < Q true
+>
+> [**<O>** S S T Y **<U>** **(Q)**] <swap>
+>
+> [O **<Q>** S T Y U **<S>**] <swap>
+
+> [A E E I N O Q]
+
+>[S T Y U **(S)**]
+>
+>[**S** T Y U **(S)**] - S < S ? false
+>
+>[S **T** Y U **(S)**] - T < S ? false
+>
+>[S T **Y** U **(S)**] - Y < S ? false
+>
+>[S T Y **U** **(S)**] - U < S ? false
+>
+>[S **<S>** Y U **<T>**] - <swap>
+
+>[ A E E I N O Q S S]
+
+>[Y U **(T)**]
+>
+>[**Y** U **(T)**] - Y < T ? false
+>
+>[Y **U** **(T)**] - U < T ? false
+>
+>[**<T>** U **<Y>**] - <swap>
+
+>[A E E I N O Q S S T]
+
+>[U **(Y)**]
+>
+>[**U** **(Y)**] - U < Y ? true
+
+> **[A E E I N O Q S S T U Y]**
+
+3. About how many compares will Quick.sort() make when sorting an array of N items that are all equal?
+
+4. Show, in the style of the trace given with the code, how the entropy-optimal sort first partitions the array B A B A B A B A C A D A B R A
+
+5. **Bad partitioning.** How does not stop on equal keys make quicksort go quadratic when all keys are equal? Give an example of this input.
+
 ## License
 
 If you have any questions please contact me:
