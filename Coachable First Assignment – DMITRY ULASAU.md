@@ -432,8 +432,8 @@ Selection sort - quadratic time.
 > [E A S Y Q **U** E S T I O **(N)**] - U < N ? false
 >
 > [E A S Y Q U **E** S T I O **(N)**] - E < N ? true
->
-> [E A **<E>** Y Q U **<S>** S T I O **(N)**] <SW>
+
+> [E A **<E>** Y Q U **< S >** S T I O **(N)**] <SW>
 >
 > [E A E Y Q U S **S** T I O **(N)**] - S < N ? false
 >
