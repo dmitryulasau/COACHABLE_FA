@@ -191,75 +191,17 @@ Selection sort - quadratic time.
 2. Give traces, in the style of the trace given in this section, showing how the keys E A S Y Q U E S T I O N  are sorted with top-down mergesort and with bottom-up mergesort.
 > The top-down approach: Given an array of size N, the algorithm recursively breaks the array in half and then merges the results together.
 >
->E A S Y Q U E S T I O N
->
->[E A S Y Q U] **|** [E S T I O N]
->
->[E A S ] **|**  [Y Q U] **|**  [E S T] **|**  [I O N]
->
->[E A] **|** [S] **|**  [Y Q] **|** [U] **|** [E S] **|** [T] **|**  [I O] **|** [N]
->
->[E] **|**  [A] **|** [S] **|**  [Y] **|**  [Q] **|** [U] **|** [E] **|**  [S] **|** [T] **|** [I] **|** [O] **|** [N]
->
->[A E] **|** [S] **|** [Q Y] **|** [U] **|** [E S] **|** [T] **|** [I O] **|** [N]
->
->[A E S] **|** [Q U Y] **|** [E S T] **|** [I N O]
->
->[A E Q S U Y] **|** [E I N O S T]
->
->[A E E I N O Q S S T U Y]
+>![Solution](https://res.cloudinary.com/dulasau/image/upload/v1675744682/MERGE_SORT_TOP-DOWN_q10513.png "Merge Sort (top-bottom)")
 
 > Bottom-Up: The iterative part is based on the idea that a one item array is already sorted, so if we have a specific array we can treat each element in it as a sorted array, then apply the merge as usual. Treat each item as a logical array.
 >
->E A S Y Q U E S T I O N
->
->[E] **|** [A] **|** [S] **|** [Y] **|** [Q] **|** [U] **|** [E] **|** [S] **|** [T] **|** [I] **|** [O] **|** [N]
->
->[A E] **|** [S Y] **|** [Q U] **|** [E S] **|** [I T] **|** [N O]
->
->[A E S Y] **|** [E Q S U] **|** [I N O T]
->
->[A E E Q S S U Y] **|** [I N O T]
->
->[A E E I N O Q S S T U Y]
-
+>![Solution](https://res.cloudinary.com/dulasau/image/upload/v1675744520/MERGE_SORT_BOTTOM-UP_leg1oc.png "Merge Sort (bottom-up)")
 &nbsp;
 ## Quicksort
 
 1. Show, in the style of the trace given with partition(), how that method partitions the array E A S Y Q U E S T I O N.
-> () - pivot
->
-> [E A S Y Q U E S T I O **(N)**]
->
-> [**E** A S Y Q U E S T I O **(N)**] - E < N ? true
->
-> [E **A** S Y Q U E S T I O **(N)**] - A < N ? true
->
-> [E A **S** Y Q U E S T I O **(N)**] - S < N ? false
->
-> [E A S **Y** Q U E S T I O **(N)**] - Y < N ? false
->
-> [E A S Y **Q** U E S T I O **(N)**] - Q < N ? false
->
-> [E A S Y Q **U** E S T I O **(N)**] - U < N ? false
->
-> [E A S Y Q U **E** S T I O **(N)**] - E < N ? true
->
-> [E A <**E**> Y Q U <**S**> S T I O **(N)**] - **SWAP**
->
-> [E A E Y Q U S **S** T I O **(N)**] - S < N ? false
->
-> [E A E Y Q U S S **T** I O **(N)**] - T < N ? false
->
-> [E A E Y Q U S S T **I** O **(N)**] - I < N ? true
->
-> [E A E <**I**> Q U S S T <**Y**> O **(N)**]  - **SWAP**
->
-> [E A E I Q U S S T Y **O** **(N)**] - O < N ? false
->
-> [E A E I <**N**> U S S T Y O <**Q**>] - **SWAP**
 
-> [E A E I] | [N] | [U S S T Y O Q]
+>![Solution](https://res.cloudinary.com/dulasau/image/upload/v1675813359/QUICK_SORT_PARTITION_v5v6iz.png "Quick sort partition")
 
 2. Show, in the style of the quicksort trace, how quicksort sorts the array E A S Y Q U E S T I O N. (For the purposes of this exercise, ignore the initial shuffle.)
 > () - pivot
