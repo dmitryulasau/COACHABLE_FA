@@ -201,7 +201,7 @@ Selection sort - quadratic time.
 
 1. Show, in the style of the trace given with partition(), how that method partitions the array E A S Y Q U E S T I O N.
 
->![Solution](https://res.cloudinary.com/dulasau/image/upload/v1675813359/QUICK_SORT_PARTITION_v5v6iz.png "Quick sort partition")
+>![Solution](https://res.cloudinary.com/dulasau/image/upload/v1675814962/QUICK_SORT_PARTITION_mbnzv2.png "Quick sort partition")
 
 2. Show, in the style of the quicksort trace, how quicksort sorts the array E A S Y Q U E S T I O N. (For the purposes of this exercise, ignore the initial shuffle.)
 > () - pivot
