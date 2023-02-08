@@ -418,7 +418,7 @@ The leftmost column is the original imput of string to be sorted; the rightmost 
 >Elements in part before "UARE" are sorted, elements below are NOT sorted (as in input).
 >
 
-> 4: Shellsort: **C**
+> 4: Shellsort: **E**
 >
 > Shell's original sequence: N/2 , N/4 , …, 1
 >
@@ -432,20 +432,20 @@ The leftmost column is the original imput of string to be sorted; the rightmost 
 >
 > In Mergesort (bottom-up) the idea that a one item array is already sorted, so if we have a specific array we can treat each element in it as a sorted array, then apply the merge as usual. 
 
-> 7: Quicksort: **I**
+> 7: Quicksort: **C**
 >
->Array partitioned in two parts - PIVOT ("HELP"). All strings less than pivot are above and greater one are below it.
+>Array partitioned in two parts - PIVOT ("SORT").
 >
 
-> 8: Quicksort (3-way): **E** ???
->
+> 8: Quicksort (3-way): **I** 
+> HELP grouped
 
 > 9: Heapsort: **G**
 > It's heapsort because the elements of the list are in the order which the sub parts follows the principle of max heap.
 >
 > WATC - Parent node.
 
-![Solution](https://res.cloudinary.com/dulasau/image/upload/v1675105551/ALGOS_ephrlj.bmp "Solution")
+![Solution](https://res.cloudinary.com/dulasau/image/upload/v1675818858/SORTING_ALL_rzf299.png "Solution")
 
 ## License
 
